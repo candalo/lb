@@ -29,7 +29,9 @@ Copy the generated code and paste it in the terminal
 
 ## How to get
 
-go get github.com/candalo/lb
+`go get github.com/candalo/lb`
+
+Install depedencies with `dep ensure`
 
 ## TODO
 

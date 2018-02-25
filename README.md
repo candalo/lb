@@ -31,10 +31,10 @@ Copy the generated code and paste it in the terminal
 
 `go get github.com/candalo/lb`
 
-Install depedencies with `dep ensure`
-
 ## TODO
 
 [ ] - Add tests
+
 [ ] - Add alarms for backups
+
 [ ] - Cover other cloud storage services

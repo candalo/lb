@@ -19,6 +19,7 @@ func callUploadService(filePath string) {
 	fileID, err := service.Upload(filePath)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v", err)
+		return
 	}
 	fmt.Printf("File %s uploaded with id %s\n", filePath, fileID)
 }

@@ -31,7 +31,7 @@ func Upload(filePath string) (string, error) {
 	driveFileID, err := storage.Read(fileStat.Name())
 	if err != nil {
 		// File has not yet been uploaded
-		driveFile, err := driveService.Files.Create(&drive.File{Name: file.Name()}).Media(file).Do()
+		driveFile, err := driveService.Files.Create(&drive.File{Name: fileStat.Name()}).Media(file).Do()
 		if err != nil {
 			return "", err
 		}
@@ -42,7 +42,7 @@ func Upload(filePath string) (string, error) {
 		return driveFile.Id, nil
 	}
 	// File has already been uploaded
-	driveFile, err := driveService.Files.Update(string(driveFileID), &drive.File{Name: file.Name()}).Media(file).Do()
+	driveFile, err := driveService.Files.Update(string(driveFileID), &drive.File{Name: fileStat.Name()}).Media(file).Do()
 	if err != nil {
 		return "", nil
 	}

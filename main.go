@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"path/filepath"
 	"sync"
 
 	"github.com/candalo/lb/service/drive"
@@ -41,14 +42,8 @@ func main() {
 			fmt.Fprintf(os.Stderr, "Error on read dir %s\n", filePath)
 		}
 		for _, fileInfo := range filesInfo {
-			var fileFullPath string
-			if filePath[len(filePath)-1:] == "/" {
-				fileFullPath = filePath + fileInfo.Name()
-			} else {
-				fileFullPath = filePath + "/" + fileInfo.Name()
-			}
 			wg.Add(1)
-			go callUploadService(fileFullPath)
+			go callUploadService(filepath.Join(filePath, fileInfo.Name()))
 		}
 	} else {
 		wg.Add(1)

@@ -31,6 +31,10 @@ Copy the generated code and paste it in the terminal
 
 `go get github.com/candalo/lb`
 
+## How to use
+
+`lb --filepath<filename or folder> [--folder=<name>]`
+
 ## TODO
 
 [ ] - Add tests

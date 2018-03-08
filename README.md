@@ -16,7 +16,7 @@ Follow the step 1 of the guide: https://developers.google.com/drive/v3/web/quick
 #### 2. Put the `.client_secret.json` file in the home folder
 The file must be hidden
 
-#### 3. Run `lb my_file` or `lb my_folder\`
+#### 3. [Run command](#howtouse)
 The first time, it is necessary to authenticate using browser. Copy the link generated after run and paste it on your browser.
 
 #### 4. Give necessary permissions
@@ -31,7 +31,7 @@ Copy the generated code and paste it in the terminal
 
 `go get github.com/candalo/lb`
 
-## How to use
+## <a name="howtouse"></a>How to use
 
 `lb --filepath<filename or folder> [--folder=<name>]`
 

@@ -8,10 +8,10 @@ Even so, I plan to expand the project to cover other cloud storage services.
 
 All suggestions are welcomed!
 
-## How to use
+## Setup
 
 #### 1. Turn on the Drive API
-Follow the step 1 of the guide: https://developers.google.com/drive/v3/web/quickstart/go
+Follow the step 1 of the [guide](https://developers.google.com/drive/v3/web/quickstart/go)
 
 #### 2. Put the `.client_secret.json` file in the home folder
 The file must be hidden
@@ -27,13 +27,13 @@ Copy the generated code and paste it in the terminal
 
 #### 6. Enjoy the powers of laziness!
 
-## How to get
-
-`go get github.com/candalo/lb`
-
 ## <a name="howtouse"></a>How to use
 
 `lb --filepath<filename or folder> [--folder=<name>]`
+
+## How to get
+
+`go get github.com/candalo/lb`
 
 ## TODO
 

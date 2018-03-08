@@ -3,12 +3,15 @@ package service
 import (
 	"fmt"
 	"os"
+	"sync"
 
 	"github.com/candalo/lb/config/drive"
 	"github.com/candalo/lb/storage"
 	"github.com/peterbourgon/diskv"
 	"google.golang.org/api/drive/v3"
 )
+
+var mux sync.Mutex
 
 type upload struct {
 	driveService *drive.Service
@@ -18,6 +21,8 @@ type upload struct {
 }
 
 func (u *upload) createFolder() (string, error) {
+	mux.Lock()
+	defer mux.Unlock()
 	folderID, err := u.storage.Read("folder-" + u.folderName)
 	if err != nil {
 		fmt.Printf("Creating folder %s...\n", u.folderName)
@@ -25,7 +30,7 @@ func (u *upload) createFolder() (string, error) {
 		if err != nil {
 			return "", err
 		}
-		u.storage.Write("folder-"+u.folderName, []byte(u.folderName))
+		u.storage.Write("folder-"+u.folderName, []byte(driveFolder.Id))
 		return driveFolder.Id, nil
 	}
 	return string(folderID), nil

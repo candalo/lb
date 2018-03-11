@@ -29,7 +29,7 @@ Copy the generated code and paste it in the terminal
 
 ## <a name="howtouse"></a>How to use
 
-`lb --filepath<filename or folder> [--folder=<name>]`
+`lb --filepath=<filename or folder> [--folder=<name>]`
 
 ## How to get
 
